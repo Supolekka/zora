@@ -26,4 +26,8 @@ def about(request):
     return render(request, 'demo/about.html',
     {})
 
+def application(request):
+    return render(request, 'demo/application.html',
+    {})
+
 

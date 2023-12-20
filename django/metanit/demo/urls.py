@@ -11,6 +11,7 @@ urlpatterns = [
     path('validate_username', validate_username, name='validate_username'),
 
     path('about', about, name='about'),
+    path('application', application, name='application')
 
 
 

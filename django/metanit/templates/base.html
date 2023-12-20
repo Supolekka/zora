@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    {% block title %}<title>Интернет-магазин</title>{% endblock %}
+    {% block title %}<title>Учёт заявок</title>{% endblock %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/bootstrap.min.js' %}" defer></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -14,7 +14,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Интернет-магазин</a>
+    <a class="navbar-brand" href="#">ООО Техносервис</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         {% block sidebar %}
             <ul class="navbar-nav mr-auto">
@@ -22,26 +22,24 @@
                     <a class="nav-link" href="{% url 'about' %}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">О нас</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Где нас найти?</a>
+                    {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'application' %}">Подать заявку</a>
+                    {% else %}
+                    <a hidden class="nav-link" href="{% url 'application' %}">Подать заявка</a>
+                    {% endif %}
                 </li>
             </ul>
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Корзина</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Мои заказы</a>
+                        <a class="nav-link" href="#">Мои заявки</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Выйти ({{ user.username }})</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Войти</a>
+                        <a class="nav-link" href="{% url 'login' %}">Авторизация</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'register' %}">Регистрация</a>

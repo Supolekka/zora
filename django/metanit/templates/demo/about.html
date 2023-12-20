@@ -1,16 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Welcome</h2>
-<p class='text'>Учет заявок на ремонт оборудования ООО &laquo;Техносервис&raquo; <p>
-<h2>Инструкция</h2>
-<p class='text'>1. Нажмите кнопку &laquo;Подключится к базе данных&raquo;<p> <br>
-<p class='text'>2. Если базы данных не существует, то появится кнопка &laquo;Создать&raquo;<p> <br>
-<p class='text'>Нажмите ее и база будет создана.<p> <br>
-<p class='text'>3. Далее перейдите во вкладку 	&laquo;Создать пользователя&raquo;<p>
-<style>  body{padding-top: 200px;
-background-color: #e0e9ff }
-h2 { text-align: center; font-size: 30px}
-.text{text-align: center;
- line-height: 0.5px;
-  font-size: 19px} </style>
+<div class="text">
+<h1>Добро пожаловать на ИброКузь учет заявок!</h1>
+<h2>Учет заявок на ремонт оборудования<h2>
+    <p>Заказчик: &laquo;ООО Техносервис&raquo;</p>
+    <p>Исполнитель: Компания &laquo;IT-Решения&raquo;</p>
+    <p>1. Нажмите кнопку &laquo;Подключиться к базе данных&raquo;<p>
+    <p>2. Если базы данных не существует, то появится кнопка &laquo;Создать&raquo;<p>
+    <p>Нажмите ее и база будет создана.<p>
+    <p>3. Далее перейдите во вкладку &laquo;Создать пользователя&raquo;<p>
+      </div>
+      <style>
+        body {
+          padding-top: 230px;
+          background-color: #b9a5a5
+        }
+
+        h2 {
+          text-align: center;
+          font-size: 30px;
+        }
+        .text {
+          text-align: center;
+          line-height: 0.5px;
+          font-size: 15px;
+          color: rgb(0, 0, 0);
+        }
+      </style>  
 {% endblock %}

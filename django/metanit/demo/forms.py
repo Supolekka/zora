@@ -14,7 +14,7 @@ class RegisterUserForm(forms.ModelForm):
                                    'required': 'Обязательное поле',
                                    'unique': 'Данный логин занят'
                                })
-    email = forms.EmailField(label='Адрес электронной почты',
+    email = forms.EmailField(label='Электронная почта',
                              error_messages={
                                  'invalid': 'Не правильный формат адреса',
                                  'unique': 'Данный адрес занят'
@@ -25,7 +25,7 @@ class RegisterUserForm(forms.ModelForm):
                                error_messages={
                                    'required': 'Обязательное поле',
                                })
-    password2 = forms.CharField(label='Пароль (повторно)',
+    password2 = forms.CharField(label='Повторите пароль',
                                 widget=forms.PasswordInput,
                                 error_messages={
                                     'required': 'Обязательное поле',
@@ -57,7 +57,7 @@ class RegisterUserForm(forms.ModelForm):
         password2 = self.cleaned_data.get('password2')
         if password and password2 and password != password2:
             raise ValidationError({
-                'password2': ValidationError('Введенные пароли не совпадают', code='password_mismatch')
+                'password2': ValidationError('Пароли не совпадают', code='password_mismatch')
             })
 
     def save(self, commit=True):

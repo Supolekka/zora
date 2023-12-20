@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Регистрация</h1>
+    <div class="registration">
+        <h1>Регистрация</h1>
     <form method="post">
         {{ form.as_p }}
         {% csrf_token %}
@@ -11,6 +12,8 @@
             Регистрация
         </button>
     </form>
+    </div>
+    
     <script>
         document.querySelector('#id_username').addEventListener('blur', async (event) => {
             const res = await fetch(`/validate_username?username=${event.target.value}`).then(res => res.json());
@@ -51,5 +54,11 @@
             event.target.parentElement.append(errors);
         })
     </script>
-
+    <style>
+        body {
+            padding-left: 700px;
+            padding-top: 250px;
+            background-color: #b9a5a5;
+        }
+    </style>
 {% endblock %}

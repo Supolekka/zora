@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text">
+    Подать заявку
+</div>
+<div>
+    <button class="btn">Отправить заявку</button>
+</div>
+<style>
+    body {
+        padding-top: 230px;
+        background-color: #b9a5a5
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .text {
+        text-align: center;
+        line-height: 0.5px;
+        font-size: 80px;
+        color: rgb(0, 0, 0);
+        margin-top: -125px;
+    }
+    .btn {
+        display: inline-block;	
+        box-sizing: border-box;
+        padding: 0 20px;
+        margin: 60px 15px 15px 490px;
+        outline: none;
+        border: none;  
+        border-radius: 4px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #fff;
+        background-color: #3775dd;
+        box-shadow: 0 2px #21487f;
+        cursor: pointer;
+        user-select: none;
+        appearance: none;
+        touch-action: manipulation;  
+        vertical-align: top;
+    }
+    .btn:hover {
+	    background-color: #002fed;
+    }
+</style>
+{% endblock %}

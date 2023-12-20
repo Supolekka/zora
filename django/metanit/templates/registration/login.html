@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Аутентификация</h1>
+    <h1>Авторизация</h1>
     {% if form.errors %}
         <div class="alert-danger">
             <p class="p-1">Не правильный логин или пароль</p>
@@ -25,4 +25,11 @@
             <input type="hidden" name="next" value="{{ next }}">
         </form>
     {% endif %}
+    <style>
+        body {
+            padding-left: 750px;
+            padding-top: 350px;
+            background-color: #b9a5a5;
+        }
+    </style>
 {% endblock %}
